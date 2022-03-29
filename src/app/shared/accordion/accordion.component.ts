@@ -25,21 +25,26 @@ export class AccordionComponent implements OnInit {
   public validation: boolean = false;
   public imgFlecha: string = "./assets/img/right-arrow.png"; 
   public mostrarBodyAcco: boolean = false;
-  private datosInsertados: any;
-  @Input() element_data: any[];
+  private datosInsertados: any[] = [];
+  public element_data;
+  @Input() set elements(elementos){
+    this.element_data = [...elementos];
+  }
   @Input() columns;
   @Input() title;
   @Input() inputValue ;
   @Input() idComponent;
-  public mostrarCard = true;;
- 
-  
+  @Output() enviarDatos: EventEmitter<any>
+  public mostrarCard = false;;
+  @Input() mensajeConfirmacion;
+  public mostrarMensaje: boolean = false;
 
   constructor(private comunicator: ComunicationService) {
+    this.enviarDatos = new EventEmitter();
   }
 
   ngOnInit(): void {
-  
+    
   }
   desplegar(){
     this.bodyAccordion = document.getElementById("accordion-body");
@@ -70,7 +75,11 @@ export class AccordionComponent implements OnInit {
     this.mostrarCard = true;
   }
   recibirDatos(valores){
-    this.datosInsertados = valores;
-    console.log(valores);
+    this.element_data = [valores];
+    this.mostrarMensaje = true;
+    setTimeout(()=>{
+      this.mostrarMensaje = false;
+      this.enviarDatos.emit(this.element_data)
+    },3000)
   }
 }

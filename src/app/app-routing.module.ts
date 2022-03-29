@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MyBeneficiariesComponent } from './components/my-beneficiaries/my-beneficiaries.component';
 import { MyConditionsComponent } from './components/my-conditions/my-conditions.component';
+import { HomeComponent } from './core/components/home/home.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { RegisterComponent } from './core/components/register/register.component';
 

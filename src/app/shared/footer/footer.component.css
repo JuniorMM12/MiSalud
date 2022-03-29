@@ -1,9 +1,6 @@
 .footer-card{
     background-color: #000000;
     min-height: 5rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 .footer-card .footer-body{
     display: flex;

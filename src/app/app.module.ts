@@ -20,6 +20,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoginComponent } from './core/components/login/login.component';
 import { RegisterComponent } from './core/components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './core/components/home/home.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     MyConditionsComponent,
     LoginComponent,
     RegisterComponent,
+    HomeComponent,
   
   ],
   imports: [
@@ -46,7 +49,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatNativeDateModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule
     
   ],
   exports:[TableComponent],
